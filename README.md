@@ -45,32 +45,6 @@ The project was built as a practical exploration of real-time communication and 
 - Git
 - GitHub
 
-## Architecture
-
-```text
-┌───────────────┐
-│   Client A    │
-│   Browser     │
-└───────┬───────┘
-        │
-        │ WebSocket
-        ▼
-┌─────────────────────┐
-│    Node.js Server   │
-│                     │
-│ Message Broadcast   │
-│ Validation          │
-│ Connection Handling │
-└─────────┬───────────┘
-          │
-          │ WebSocket
-          ▼
-┌───────────────┐
-│   Client B    │
-│   Browser     │
-└───────────────┘
-
-Messages received by the server are validated and then broadcast to connected WebSocket clients.
 
 ## LATENCY MONITORING
 
