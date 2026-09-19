@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Messaging Monitor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <header class="header">
+            <div>
+                <p class="eyebrow">WEBSOCKET SYSTEM</p>
+                <h1>Real-Time Messaging</h1>
+                <p class="subtitle">
+                    Real-time communication and latency monitoring
+                </p>
+            </div>
+
+            <div id="connectionStatus" class="status disconnected">
+                <span class="status-dot"></span>
+                <span id="statusText">Disconnected</span>
+            </div>
+        </header>
+
+
+        <section class="dashboard">
+
+            <!-- Chat -->
+            <div class="chat-card">
+
+                <div class="card-header">
+                    <h2>Message Stream</h2>
+                    <span id="clientId">Client</span>
+                </div>
+
+                <div id="messages" class="messages">
+                    <div class="empty-state">
+                        Waiting for messages...
+                    </div>
+                </div>
+
+                <div class="message-input">
+                    <input
+                        type="text"
+                        id="messageInput"
+                        placeholder="Type a message..."
+                        autocomplete="off"
+                    >
+
+                    <button id="sendButton">
+                        Send
+                    </button>
+                </div>
+
+            </div>
+
+
+            <!-- Monitoring -->
+            <aside class="monitor-card">
+
+                <div class="card-header">
+                    <h2>System Monitor</h2>
+                </div>
+
+                <div class="metric">
+                    <span>Messages Sent</span>
+                    <strong id="sentCount">0</strong>
+                </div>
+
+                <div class="metric">
+                    <span>Messages Received</span>
+                    <strong id="receivedCount">0</strong>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="current-latency">
+
+    <span>Current Latency</span>
+
+    <div class="latency-value">
+        <strong id="currentLatency">0</strong>
+        <span>ms</span>
+    </div>
+
+</div>
+
+<div class="divider"></div>
+
+                <div class="metric">
+                    <span>Average Latency</span>
+                    <strong><span id="averageLatency">0</span> ms</strong>
+                </div>
+
+                <div class="metric">
+                    <span>Minimum Latency</span>
+                    <strong><span id="minimumLatency">0</span> ms</strong>
+                </div>
+
+                <div class="metric">
+                    <span>Maximum Latency</span>
+                    <strong><span id="maximumLatency">0</span> ms</strong>
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
